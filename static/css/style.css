@@ -1,0 +1,470 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: -1px;
+}
+
+.logo-subtitle {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: lowercase;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.upload-btn, .menu-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.menu-btn {
+    background: transparent;
+    font-size: 18px;
+}
+
+.upload-btn:hover, .menu-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Video Container */
+.video-container {
+    padding-top: 60px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Video Player */
+.video-player {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    background: black;
+    border-radius: 10px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.play-button {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 0, 0, 0.8);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    transition: all 0.3s ease;
+}
+
+.video-player:hover .play-button {
+    transform: scale(1.1);
+    background: rgba(255, 0, 0, 1);
+}
+
+/* Video Info */
+.video-info {
+    width: 100%;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.video-title {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+/* Related Videos */
+.related-videos {
+    width: 100%;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    padding: 0 20px;
+}
+
+.related-video {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.related-video:hover {
+    transform: translateY(-5px);
+}
+
+.thumbnail {
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-overlay {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 0, 0, 0.8);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.video-desc {
+    padding: 10px;
+    color: white;
+    font-size: 14px;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 10px;
+    padding: 40px;
+    max-width: 450px;
+    width: 90%;
+    position: relative;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+
+.close-modal:hover {
+    color: #333;
+}
+
+/* Login Choice */
+#loginChoice {
+    text-align: center;
+}
+
+#loginChoice h2 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+.google-btn {
+    width: 100%;
+    background: #4285f4;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background 0.3s ease;
+}
+
+.google-btn:hover {
+    background: #357ae8;
+}
+
+.google-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Google Login Form */
+.google-login-form, .forgot-password-form, .create-password-form {
+    text-align: center;
+}
+
+.google-logo {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.google-login-form h2, .forgot-password-form h2, .create-password-form h2 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #4285f4;
+}
+
+.password-group {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.toggle-password:hover {
+    color: #333;
+}
+
+.forgot-password {
+    display: block;
+    color: #4285f4;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.create-account, .back-login {
+    color: #4285f4;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.create-account:hover, .back-login:hover {
+    text-decoration: underline;
+}
+
+.next-btn {
+    background: #4285f4;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.next-btn:hover {
+    background: #357ae8;
+}
+
+/* Error & Success Messages */
+.error-message, .success-message {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.error-message {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.success-message {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.error-message i, .success-message i {
+    font-size: 18px;
+}
+
+/* Real-time Status */
+.realtime-status {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 100;
+    min-width: 200px;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    background: #4caf50;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.data-display {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 12px;
+}
+
+.data-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.data-label {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.data-value {
+    color: #4caf50;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .video-player {
+        height: 300px;
+    }
+    
+    .related-videos {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content {
+        padding: 20px;
+    }
+    
+    .realtime-status {
+        bottom: 10px;
+        right: 10px;
+        min-width: 150px;
+    }
+}
